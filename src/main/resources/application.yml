@@ -4,13 +4,11 @@ spring:
   application:
     name: voting_sessions
   jpa:
-    hibernate:
-      ddl-auto: validate
+    hibernate.ddl-auto: update
+    generate-ddl: true
+    show-sql: true
   datasource:
+    driverClassName: org.postgresql.Driver
     username: user
     password: password
     url: jdbc:postgresql://localhost:5432/postgres
-  flyway:
-    datasources:
-      default:
-        locations: classpath:db/migration

@@ -6,13 +6,13 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Builder
+@Table(name = "vote")
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
@@ -22,7 +22,7 @@ public class Vote {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String vote;
+    private String description;
 
     @OneToOne
     @JoinColumn(name = "voting_agenda_id")

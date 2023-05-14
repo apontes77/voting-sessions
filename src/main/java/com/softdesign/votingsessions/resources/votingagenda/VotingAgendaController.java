@@ -1,6 +1,6 @@
 package com.softdesign.votingsessions.resources.votingagenda;
 
-import com.softdesign.votingsessions.converters.VotingAgendaMapper;
+import com.softdesign.votingsessions.mappers.VotingAgendaMapper;
 import com.softdesign.votingsessions.domain.VotingAgenda;
 import com.softdesign.votingsessions.resources.votingagenda.requests.VotingAgendaRequest;
 import com.softdesign.votingsessions.resources.votingagenda.responses.VotingAgendaResponse;
@@ -25,7 +25,7 @@ public class VotingAgendaController {
 
     @PostMapping
     public ResponseEntity<VotingAgendaResponse> registerVotingAgenda(@RequestBody VotingAgendaRequest votingAgendaRequest) {
-        VotingAgenda votingAgenda = votingAgendaService.registerVotingAgenda(votingAgendaMapper.toDTO(votingAgendaRequest));
+        final VotingAgenda votingAgenda = votingAgendaService.registerVotingAgenda(votingAgendaMapper.toDTO(votingAgendaRequest));
         return ResponseEntity.ok(votingAgendaMapper.toResponse(votingAgenda));
     }
 }

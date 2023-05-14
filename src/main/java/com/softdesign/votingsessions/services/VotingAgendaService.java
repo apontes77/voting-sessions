@@ -1,6 +1,6 @@
 package com.softdesign.votingsessions.services;
 
-import com.softdesign.votingsessions.converters.VotingAgendaMapper;
+import com.softdesign.votingsessions.mappers.VotingAgendaMapper;
 import com.softdesign.votingsessions.domain.VotingAgenda;
 import com.softdesign.votingsessions.dto.VotingAgendaDTO;
 import com.softdesign.votingsessions.repository.VotingAgendaRepository;
@@ -28,8 +28,8 @@ public class VotingAgendaService {
         return votingAgendaRepository.findAll();
     }
 
-    public VotingAgenda searchVotingAgendaById(Long ScheduleId) {
-        return votingAgendaRepository.findById(ScheduleId)
+    public VotingAgenda searchVotingAgendaById(Long votingAgendaId) {
+        return votingAgendaRepository.findById(votingAgendaId)
                 .orElseThrow(() -> new EntityNotFoundException("Voting Agenda not founded"));
     }
 }

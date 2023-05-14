@@ -1,4 +1,4 @@
-package com.softdesign.votingsessions.converters;
+package com.softdesign.votingsessions.mappers;
 
 import com.softdesign.votingsessions.domain.VotingAgenda;
 import com.softdesign.votingsessions.dto.VotingAgendaDTO;
@@ -12,7 +12,7 @@ public interface VotingAgendaMapper {
 
     VotingAgendaMapper MAPPER = Mappers.getMapper(VotingAgendaMapper.class);
 
-    VotingAgendaResponse toResponse(VotingAgenda dto);
+    VotingAgendaResponse toResponse(VotingAgenda votingAgenda);
 
     VotingAgendaDTO toDTO(VotingAgendaRequest request);
 
