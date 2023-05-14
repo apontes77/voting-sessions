@@ -10,10 +10,9 @@ services:
       - "5432:5432"
 
   flyway:
-    image: flyway/flyway:8
-    command: -configFiles=/flyway/conf/flyway.config -locations=filesystem:/flyway/sql -connectRetries=60 migrate
-    volumes:
-      - ${PWD}/sql_versions:/flyway/sql
-      - ${PWD}/docker-flyway.config:/flyway/conf/flyway.config
+    image: flyway/flyway:6.4.1-alpine
+    environment:
+      - FLYWAY_EDITION=community
+    command: -url=jdbc:postgresql://database:5432/postgres -schemas=flyway -user=user -password=password -connectRetries=10 migrate
     depends_on:
       - database
