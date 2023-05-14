@@ -1,4 +1,4 @@
-package com.softdesign.votingsessions.resources.requests;
+package com.softdesign.votingsessions.resources.votingagenda.requests;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 
 @Getter
 @RequiredArgsConstructor
-public class ScheduleRequest {
+public class VotingAgendaRequest {
 
     private String title;
 
