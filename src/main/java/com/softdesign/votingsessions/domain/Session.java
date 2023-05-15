@@ -11,8 +11,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
-
 @Entity
 @Table(name = "session")
 @Getter
@@ -22,8 +20,8 @@ public class Session {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private LocalDateTime openingDate;
-    private LocalDateTime closingDate;
+    private Integer timeSessionOpened;
+    private Boolean opened;
     @OneToOne
     @JoinColumn(name = "voting_agenda_id")
     private VotingAgenda votingAgenda;

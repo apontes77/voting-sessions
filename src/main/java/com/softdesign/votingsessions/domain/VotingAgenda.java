@@ -26,6 +26,4 @@ public class VotingAgenda {
    private String title;
    @Temporal(TemporalType.TIMESTAMP)
    private LocalDateTime createdAt;
-   @OneToOne(mappedBy = "votingAgenda")
-   private Session session;
 }
